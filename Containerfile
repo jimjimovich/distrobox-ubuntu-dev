@@ -23,3 +23,31 @@ RUN DOWNLOAD_URL=$(curl -s https://api.github.com/repos/charmbracelet/vhs/releas
     && rm package.deb \
     && wget https://github.com/tsl0922/ttyd/releases/latest/download/ttyd.x86_64 -O /tmp/ttyd && \
     install -c -m 0755 /tmp/ttyd /usr/bin/ttyd
+
+# Install Mods
+RUN DOWNLOAD_URL=$(curl -s https://api.github.com/repos/charmbracelet/mods/releases/latest | \
+    jq -r '.assets[] | select(.name| test(".*.amd64.deb$")).browser_download_url') \
+    && wget "${DOWNLOAD_URL}" -O package.deb \
+    && dpkg -i package.deb \
+    && rm package.deb
+
+# Install Glow
+RUN DOWNLOAD_URL=$(curl -s https://api.github.com/repos/charmbracelet/glow/releases/latest | \
+    jq -r '.assets[] | select(.name| test(".*.amd64.deb$")).browser_download_url') \
+    && wget "${DOWNLOAD_URL}" -O package.deb \
+    && dpkg -i package.deb \
+    && rm package.deb
+
+# Install Skate
+RUN DOWNLOAD_URL=$(curl -s https://api.github.com/repos/charmbracelet/skate/releases/latest | \
+    jq -r '.assets[] | select(.name| test(".*.amd64.deb$")).browser_download_url') \
+    && wget "${DOWNLOAD_URL}" -O package.deb \
+    && dpkg -i package.deb \
+    && rm package.deb
+
+# Install Gum
+RUN DOWNLOAD_URL=$(curl -s https://api.github.com/repos/charmbracelet/gum/releases/latest | \
+    jq -r '.assets[] | select(.name| test(".*.amd64.deb$")).browser_download_url') \
+    && wget "${DOWNLOAD_URL}" -O package.deb \
+    && dpkg -i package.deb \
+    && rm package.deb
