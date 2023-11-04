@@ -1,5 +1,8 @@
 FROM docker.io/library/ubuntu:22.04 as portable-zoom
 
+# Replace sh with bash
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+
 ENV DEBIAN_FRONTEND=noninteractive
 
 LABEL com.github.containers.toolbox="true" \
@@ -51,3 +54,24 @@ RUN DOWNLOAD_URL=$(curl -s https://api.github.com/repos/charmbracelet/gum/releas
     && wget "${DOWNLOAD_URL}" -O package.deb \
     && dpkg -i package.deb \
     && rm package.deb
+
+#### Node ####
+# nvm environment variables
+RUN mkdir /usr/local/nvm
+ENV NVM_DIR /usr/local/nvm
+ENV NODE_VERSION 20.9.0
+
+# NVM
+#RUN touch ~/.bashrc && chmod +x ~/.bashrc
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+RUN source $NVM_DIR/nvm.sh \
+    && nvm install $NODE_VERSION \
+    && nvm alias default $NODE_VERSION \
+    && nvm use default 
+
+# add node and npm to path so the commands are available
+ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
+ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
+
+# Enable Corepack for Nodejs (needed for Yarn)
+RUN corepack enable

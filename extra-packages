@@ -8,3 +8,8 @@ git
 jq
 ffmpeg
 wget
+unzip
+libc++abi-dev
+libc++-dev
+python3.11
+python3
