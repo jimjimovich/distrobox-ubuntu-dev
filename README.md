@@ -15,8 +15,8 @@ distrobox enterubuntu
 
 ## Updating
 ```shell
-distrobox-stop ubuntu
-distrobox-rm ubuntu
+distrobox-stop ubuntu --yes
+distrobox-rm ubuntu --yes
 distrobox create -i ghcr.io/jimjimovich/distrobox-ubuntu-dev -n ubuntu --pull
 ```
 
