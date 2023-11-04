@@ -13,10 +13,13 @@ libxcb-shape0
 libxcb-xfixes0
 libxcb-randr0
 libsm6
-pulseaudio
 libxslt1.1
 libxcb-xtest0-dev
-curl
 ca-certificates
 libnss3
 libnss3-dev
+curl
+pulseaudio
+bash-completion
+build-essential
+git

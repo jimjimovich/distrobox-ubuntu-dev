@@ -13,5 +13,12 @@ Enter the distrobox
 distrobox enterubuntu
 ```
 
+## Updating
+```shell
+distrobox-stop ubuntu
+distrobox-rm ubuntu
+distrobox create -i ghcr.io/jimjimovich/distrobox-ubuntu-dev -n ubuntu --pull
+```
+
 ## Credits
 Inspired by https://github.com/ublue-os/boxkit
