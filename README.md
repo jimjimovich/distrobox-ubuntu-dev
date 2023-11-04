@@ -2,8 +2,16 @@
 An Ubuntu image for distrobox set up with dev tools
 
 
-## Usage 
+## How to use
+Create new distrobox, pulling this container
+```bash
+distrobox create -i ghcr.io/jimjimovich/distrobox-ubuntu-dev -n ubuntu --pull
+```
 
+Enter the distrobox
+```bash
+distrobox enterubuntu
+```
 
 ## Credits
 Inspired by https://github.com/ublue-os/boxkit
