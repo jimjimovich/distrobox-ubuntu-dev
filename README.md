@@ -10,7 +10,7 @@ distrobox create -i ghcr.io/jimjimovich/distrobox-ubuntu-dev -n ubuntu --pull
 
 Enter the distrobox
 ```bash
-distrobox enterubuntu
+distrobox enter ubuntu
 ```
 
 ## Updating
