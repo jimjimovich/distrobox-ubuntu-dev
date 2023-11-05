@@ -1,4 +1,4 @@
-FROM docker.io/library/ubuntu:22.04 as portable-zoom
+FROM docker.io/library/ubuntu:22.04 AS base
 
 # Replace sh with bash
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
@@ -63,7 +63,7 @@ ENV NODE_VERSION 20.9.0
 
 # NVM
 #RUN touch ~/.bashrc && chmod +x ~/.bashrc
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 RUN source $NVM_DIR/nvm.sh \
     && nvm install $NODE_VERSION \
     && nvm alias default $NODE_VERSION \
