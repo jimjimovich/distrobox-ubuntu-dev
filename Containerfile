@@ -78,3 +78,10 @@ RUN corepack enable
 
 # Deno
 RUN curl -fsSL https://deno.land/x/install/install.sh | DENO_INSTALL='/usr' sh
+
+# AWS CLI
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscli.zip" \
+    && unzip awscli.zip \
+    && ./aws/install \
+    && rm awscli.zip \
+    && rm -rf aws/

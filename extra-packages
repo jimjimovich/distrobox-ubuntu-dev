@@ -13,3 +13,8 @@ libc++abi-dev
 libc++-dev
 python3.11
 python3
+net-tools
+iputils-ping
+nano
+vim
+python3-pip
