@@ -55,6 +55,13 @@ RUN DOWNLOAD_URL=$(curl -s https://api.github.com/repos/charmbracelet/gum/releas
     && dpkg -i package.deb \
     && rm package.deb
 
+# Install Github CLI
+RUN DOWNLOAD_URL=$(curl -s https://api.github.com/repos/cli/cli/releases/latest | \
+    jq -r '.assets[] | select(.name| test(".*_amd64.deb$")).browser_download_url') \
+    && wget "${DOWNLOAD_URL}" -O package.deb \
+    && dpkg -i package.deb \
+    && rm package.deb
+
 #### Node ####
 # nvm environment variables
 RUN mkdir /usr/local/nvm
