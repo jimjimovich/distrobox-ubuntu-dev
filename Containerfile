@@ -92,3 +92,7 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscli.z
     && ./aws/install \
     && rm awscli.zip \
     && rm -rf aws/
+
+# BashRC
+RUN echo "alias ll='ls -l'" >> ~/.bashrc
+

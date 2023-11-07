@@ -19,3 +19,4 @@ nano
 vim
 python3-pip
 file
+openssh-client
