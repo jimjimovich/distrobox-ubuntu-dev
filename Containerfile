@@ -93,6 +93,6 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscli.z
     && rm awscli.zip \
     && rm -rf aws/
 
-# BashRC
-RUN echo "alias ll='ls -l'" >> ~/.bashrc
+# Aliases
+RUN echo "alias ll='ls -l'" >> /etc/profile
 
