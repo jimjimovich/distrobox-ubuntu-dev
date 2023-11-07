@@ -94,5 +94,5 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscli.z
     && rm -rf aws/
 
 # Aliases
-RUN echo "alias ll='ls -l'" >> /etc/profile
+RUN echo "alias ll='ls -alF'" >> /etc/profile
 
