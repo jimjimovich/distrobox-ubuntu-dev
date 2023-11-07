@@ -19,13 +19,13 @@ RUN apt-get update &&   \
     rm -rd /var/lib/apt/lists/*
 
 # Install VHS
-RUN DOWNLOAD_URL=$(curl -s https://api.github.com/repos/charmbracelet/vhs/releases/latest | \
-    jq -r '.assets[] | select(.name| test(".*.amd64.deb$")).browser_download_url') \
-    && wget "${DOWNLOAD_URL}" -O package.deb \
-    && dpkg -i package.deb \
-    && rm package.deb \
-    && wget https://github.com/tsl0922/ttyd/releases/latest/download/ttyd.x86_64 -O /tmp/ttyd && \
-    install -c -m 0755 /tmp/ttyd /usr/bin/ttyd
+# RUN DOWNLOAD_URL=$(curl -s https://api.github.com/repos/charmbracelet/vhs/releases/latest | \
+#     jq -r '.assets[] | select(.name| test(".*.amd64.deb$")).browser_download_url') \
+#     && wget "${DOWNLOAD_URL}" -O package.deb \
+#     && dpkg -i package.deb \
+#     && rm package.deb \
+#     && wget https://github.com/tsl0922/ttyd/releases/latest/download/ttyd.x86_64 -O /tmp/ttyd && \
+#     install -c -m 0755 /tmp/ttyd /usr/bin/ttyd
 
 # Install Mods
 RUN DOWNLOAD_URL=$(curl -s https://api.github.com/repos/charmbracelet/mods/releases/latest | \
