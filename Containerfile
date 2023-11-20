@@ -96,3 +96,10 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscli.z
 # Aliases
 RUN echo "alias ll='ls -alF'" >> /etc/profile
 
+# Install RVM, Ruby, and set default version
+RUN curl -sSL https://get.rvm.io | bash -s stable
+RUN /bin/bash -l -c "rvm install 3.2.2" 
+RUN /bin/bash -l -c "rvm use 3.2.2 --default"
+
+# Install system-wide gems
+RUN /bin/bash -l -c "gem install bundler ruby-openai"

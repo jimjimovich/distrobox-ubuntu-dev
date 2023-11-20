@@ -21,3 +21,6 @@ python3-pip
 file
 openssh-client
 xclip
+libssl-dev
+libreadline-dev
+zlib1g-dev
