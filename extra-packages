@@ -24,3 +24,5 @@ xclip
 libssl-dev
 libreadline-dev
 zlib1g-dev
+rsync
+dnsutils
