@@ -105,4 +105,4 @@ RUN /bin/bash -l -c "rvm use 3.2.2 --default"
 RUN /bin/bash -l -c "gem install bundler ruby-openai"
 
 # Starship Prompt
-RUN curl -sS https://starship.rs/install.sh | sh
+RUN curl -sS https://starship.rs/install.sh --yes | sh
