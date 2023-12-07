@@ -105,7 +105,7 @@ RUN /bin/bash -l -c "rvm use 3.2.2 --default"
 RUN /bin/bash -l -c "gem install bundler ruby-openai"
 
 # Starship Shell Prompt
-RUN curl -Lo /tmp/starship.tar.gz "https://github.com/starship/starship/releases/latest/download/starship-x86_64-unknown-linux-gnu.tar.gz" && \
-  tar -xzf /tmp/starship.tar.gz -C /tmp && \
-  install -c -m 0755 /tmp/starship /usr/bin && \
-  echo 'eval "$(starship init bash)"' >> /etc/bashrc
+#RUN curl -Lo /tmp/starship.tar.gz "https://github.com/starship/starship/releases/latest/download/starship-x86_64-unknown-linux-gnu.tar.gz" && \
+#  tar -xzf /tmp/starship.tar.gz -C /tmp && \
+#  install -c -m 0755 /tmp/starship /usr/bin && \
+#  echo 'eval "$(starship init bash)"' >> /etc/bashrc
