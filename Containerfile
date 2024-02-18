@@ -105,7 +105,8 @@ RUN /bin/bash -l -c "rvm use 3.2.2 --default"
 RUN /bin/bash -l -c "gem install bundler ruby-openai"
 
 # Install Windmill CLI
-RUN DENO_INSTALL_ROOT=/usr/local/bin deno install -A https://deno.land/x/wmill/main.ts
+ENV DENO_INSTALL_ROOT=/usr/local/bin
+RUN deno install -A https://deno.land/x/wmill/main.ts
 
 # Starship Shell Prompt
 #RUN curl -Lo /tmp/starship.tar.gz "https://github.com/starship/starship/releases/latest/download/starship-x86_64-unknown-linux-gnu.tar.gz" && \
