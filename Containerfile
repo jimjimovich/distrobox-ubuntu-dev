@@ -108,7 +108,6 @@ RUN /bin/bash -l -c "gem install bundler ruby-openai"
 RUN deno install -A --root /usr/local https://deno.land/x/wmill/main.ts
 
 # Install Warp Terminal
-RUN apt install libxcb-xkb1 libxkbcommon-x11-0 -y
 RUN wget https://releases.warp.dev/stable/v0.2024.02.20.08.01.stable_01/warp-terminal_0.2024.02.20.08.01.stable.01_amd64.deb -O package.deb \
     && dpkg -i package.deb \
     && rm package.deb

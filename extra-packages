@@ -26,3 +26,6 @@ libreadline-dev
 zlib1g-dev
 rsync
 dnsutils
+libxcb-xkb1
+libxkbcommon-x11-0
+libegl1-mesa
