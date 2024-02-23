@@ -107,6 +107,9 @@ RUN /bin/bash -l -c "gem install bundler ruby-openai"
 # Install Windmill CLI
 RUN deno install -A --root /usr/local https://deno.land/x/wmill/main.ts
 
+# Install Warp Terminal
+RUN wget -o warp.deb https://app.warp.dev/get_warp?package=deb && dpkg -i warp.deb && rm warp.deb
+
 # Starship Shell Prompt
 #RUN curl -Lo /tmp/starship.tar.gz "https://github.com/starship/starship/releases/latest/download/starship-x86_64-unknown-linux-gnu.tar.gz" && \
 #  tar -xzf /tmp/starship.tar.gz -C /tmp && \
