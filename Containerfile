@@ -84,7 +84,7 @@ ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 RUN corepack enable
 
 # Deno
-RUN curl -fsSL https://deno.land/x/install/install.sh | DENO_INSTALL='/usr' sh
+RUN curl -fsSL https://deno.land/install.sh | DENO_INSTALL='/usr' sh
 
 # AWS CLI
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscli.zip" \
