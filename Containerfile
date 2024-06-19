@@ -105,7 +105,7 @@ RUN /bin/bash -l -c "rvm use 3.2.2 --default"
 RUN /bin/bash -l -c "gem install bundler ruby-openai"
 
 # Install Windmill CLI
-RUN deno install -A --root /usr/local https://deno.land/x/wmill/main.ts
+RUN deno install -q -A --root https://deno.land/x/wmill/main.ts
 
 # Install Warp Terminal
 RUN wget https://releases.warp.dev/stable/v0.2024.02.20.08.01.stable_01/warp-terminal_0.2024.02.20.08.01.stable.01_amd64.deb -O package.deb \
